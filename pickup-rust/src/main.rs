@@ -1,3 +1,4 @@
+use actix_web::middleware::Logger;
 use actix_web::{App, HttpServer};
 use std::sync::mpsc;
 use std::sync::mpsc::Sender;
@@ -57,6 +58,7 @@ async fn main() -> std::io::Result<()> {
             .data(AppState {
                 sender: sender.clone(),
             })
+            .wrap(Logger::default())
             .service(api::hello)
             .service(api::control::play)
             .service(api::control::stop)
