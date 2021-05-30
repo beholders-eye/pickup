@@ -8,7 +8,11 @@ edition = "2018"
 
 [dependencies]
 actix-web = "^3"
+bincode = "^1"
+clap = "3.0.0-beta"
 env_logger = "^0"
 log = "^0"
 rodio = "^0"
+sled = "^0"
+walkdir = "2"
 
